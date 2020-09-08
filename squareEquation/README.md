@@ -1,4 +1,4 @@
-# Quadratic equation solver
+# Square equation solver
 
 ---
 
