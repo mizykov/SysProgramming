@@ -45,7 +45,6 @@ int main()
     okZeroOrInfinityRoots(0, 0, 0, 6);
     okZeroOrInfinityRoots(-1, 0, 0, 0);
 
-
 #endif
 
 #ifndef is_test
@@ -64,4 +63,5 @@ int main()
     printAnswer(option, x1, x2);
 
 #endif
+
 }
