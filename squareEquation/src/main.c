@@ -58,7 +58,7 @@ int main()
 
     if (scanf("%lf %lf %lf", &a, &b, &c) != 3)
     {
-        puts("ERROR: wrong input!");
+        printf("ERROR: wrong input!\n");
         return -1;
     }
 
