@@ -57,7 +57,7 @@ int main()
     printf("Add a, b, c:\n");
 
     if (scanf("%lf %lf %lf", &a, &b, &c) != 3)
-    {
+    {!
         printf("ERROR: wrong input!\n");
         return -1;
     }
