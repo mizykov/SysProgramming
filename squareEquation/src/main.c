@@ -54,9 +54,13 @@ int main()
     int option;
 
     printf("# Welcome to quadratique equation solver!\n");
-    printf("Add a, b, c: ");
+    printf("Add a, b, c:\n");
 
-    scanf("%lg %lg %lg", &a, &b, &c);
+    if (scanf("%lf %lf %lf", &a, &b, &c) != 3)
+    {
+        puts("ERROR: wrong input!");
+        return -1;
+    }
 
     option = solveQuadratiqueEquation(a, b, c, &x1, &x2);
 
