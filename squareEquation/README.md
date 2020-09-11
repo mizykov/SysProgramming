@@ -19,10 +19,13 @@ The build is supported by Makefile:
 
 > Build an exe file, tests, and documentation:
 >> make full
+>
 > Build an exe file
 >> make exeFile
+>
 > Build an documentation
 >> make docs
+>
 > Build an tests
 >> make tests
 
@@ -30,5 +33,6 @@ The build is supported by Makefile:
 
 > Launch program:
 >> make runExeFile
+>
 > Launch tests
 >> make runTests
