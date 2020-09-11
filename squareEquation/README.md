@@ -23,10 +23,10 @@ The build is supported by Makefile:
 > Build an exe file
 >> make exeFile
 >
-> Build an documentation (which is located in the docs - index.html):
+> Build the documentation (which is located in the docs - index.html):
 >> make docs
 >
-> Build an tests
+> Build tests
 >> make tests
 
 # How to launch:
