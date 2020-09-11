@@ -1,0 +1,7 @@
+PROJECT_NAME           = "Square equation"
+PROJECT_BRIEF          = "Program solves quadraitc equations a*x^2 + b*x + c = 0"
+
+INPUT                  = src
+HTML_OUTPUT            = docs
+GENERATE_LATEX         = NO
+OPTIMIZE_OUTPUT_FOR_C  = YES

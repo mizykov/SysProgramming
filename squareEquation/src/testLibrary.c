@@ -1,3 +1,5 @@
+//! \file "testLibrary.c"
+
 //---------------------------------------------------------------------------------------------------------
 //! okTwoRoots method compare expected and received answers.
 //! 

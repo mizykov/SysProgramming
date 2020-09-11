@@ -1,3 +1,5 @@
+//! \file "calculate.c"
+
 //---------------------------------------------------------------------------------------------------------
 //! calculateDiscriminant method calculate the value of discriminant.
 //! 
