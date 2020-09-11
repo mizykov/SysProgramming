@@ -26,7 +26,7 @@ clean:
 	@echo "Removing $(OBJ), $(BIN), and $(DOCS) directories"
 	@rm -rf $(OBJ) $(BIN) $(DOCS)
 
-Program files:
+# Program files:
 
 $(BIN)/exeFile: $(OBJ)/main.o
 	@echo "Linking $@"
