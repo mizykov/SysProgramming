@@ -15,7 +15,7 @@ const double epsilon = 1E-6;
 
 double calculateDiscriminant(double a, double b, double c)
 {
-    return b * b - 4 * a * c;
+        return b * b - 4 * a * c;
 }
 
 //-----------------------------------------------------------------------------
@@ -35,18 +35,17 @@ double calculateDiscriminant(double a, double b, double c)
 double calculateRoots(double discriminantValue, double a, double b, double c, 
                       double *x1, double *x2)
 {
-    if (isZero(discriminantValue))
-    {
-        *x1 = (-1) * b / (2 * a);
-        return 1;
-    }
+        if (isZero(discriminantValue)) {
+                *x1 = (-1) * b / (2 * a);
+                return 1;
+        }
 
-    *x1 = ((-1) * b + sqrt(discriminantValue)) / (2 * a);
-    *x2 = ((-1) * b - sqrt(discriminantValue)) / (2 * a);
-    return 2;
+        *x1 = ((-1) * b + sqrt(discriminantValue)) / (2 * a);
+        *x2 = ((-1) * b - sqrt(discriminantValue)) / (2 * a);
+        return 2;
 }
 
 int isZero(double value)
 {
-    return fabs(value) < epsilon;
+        return fabs(value) < epsilon;
 }

@@ -25,21 +25,20 @@
 int main()
 {
     
-    double a = 0, b = 0, c = 0;
-    double x1 = 0, x2 = 0;
-    int option;
+        double a = 0, b = 0, c = 0;
+        double x1 = 0, x2 = 0;
+        int option;
 
-    printf("# Welcome to quadratique equation solver!\n");
-    printf("Add a, b, c:\n");
+        printf("# Welcome to quadratique equation solver!\n");
+        printf("Add a, b, c:\n");
 
-    if (scanf("%lf %lf %lf", &a, &b, &c) != 3)
-    {
-        printf("ERROR: wrong input!\n");
-        return -1;
-    }
+        if (scanf("%lf %lf %lf", &a, &b, &c) != 3) {
+                printf("ERROR: wrong input!\n");
+                return -1;
+        }
 
-    option = solveQuadratiqueEquation(a, b, c, &x1, &x2);
+        option = solveQuadratiqueEquation(a, b, c, &x1, &x2);
 
-    printAnswer(option, x1, x2);
+        printAnswer(option, x1, x2);
 
 }

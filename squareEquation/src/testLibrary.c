@@ -23,34 +23,28 @@
 void okTwoRoots(int expected_option, double expected_x1, double expected_x2, 
                 double a, double b, double c)
 {
-    double x1 = 0, x2 = 0;
-    int option;
-    int testPassed = 1;
+        double x1 = 0, x2 = 0;
+        int option;
+        int testPassed = 1;
 
-    option = solveQuadratiqueEquation(a, b, c, &x1, &x2);
+        option = solveQuadratiqueEquation(a, b, c, &x1, &x2);
 
-    if (expected_option != option || expected_x1 != x1 || expected_x2 != x2)
-    {
-        testPassed = 0;
-    }
+        if (expected_option != option || expected_x1 != x1 || expected_x2 != x2)
+                testPassed = 0;
 
-    if (testPassed == 1)
-    {
-        printf("TEST IS PASSED\n");
-    }
-    else
-    {
-        printf("TEST IS FAILED\n");
-    }
+        if (testPassed == 1)
+                printf("TEST IS PASSED\n");
+        else
+                printf("TEST IS FAILED\n");
 }
 
 void okOneRoot(int expected_option, double expected_x, 
                double a, double b, double c)
 {
-    okTwoRoots(expected_option, expected_x, 0, a, b, c);
+        okTwoRoots(expected_option, expected_x, 0, a, b, c);
 }
 
 void okZeroOrInfinityRoots(int expected_option, double a, double b, double c)
 {
-    okTwoRoots(expected_option, 0, 0, a, b, c);
+        okTwoRoots(expected_option, 0, 0, a, b, c);
 }

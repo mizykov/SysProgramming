@@ -16,13 +16,11 @@
 
 int solveLinearEquation(double b, double c, double *x1)
 {
-    if (isZero(b))
-    {
-        return isZero(c) ? -1 : 0;
-    }
+        if (isZero(b))
+                return isZero(c) ? -1 : 0;
 
-    *x1 = (-1) * c / b;
-    return 1;
+        *x1 = (-1) * c / b;
+        return 1;
 }
 
 //-----------------------------------------------------------------------------
@@ -41,24 +39,18 @@ int solveLinearEquation(double b, double c, double *x1)
 int solveQuadratiqueEquation(double a, double b, double c, 
                              double *x1, double *x2)
 {
-    double discriminantValue;
+        double discriminantValue;
 
-    if (isZero(a))
-    {
-        return solveLinearEquation(b, c, x1);
-    }
+        if (isZero(a))
+                return solveLinearEquation(b, c, x1);
 
-    discriminantValue = calculateDiscriminant(a, b, c);
+        discriminantValue = calculateDiscriminant(a, b, c);
 
-    if (isZero(discriminantValue))
-    {
-        discriminantValue = 0.0;
-    }
+        if (isZero(discriminantValue))
+                discriminantValue = 0.0;
 
-    if (discriminantValue >= 0)
-    {
-        return calculateRoots(discriminantValue, a, b, c, x1, x2);
-    }
+        if (discriminantValue >= 0)
+                return calculateRoots(discriminantValue, a, b, c, x1, x2);
 
-    return 0;
+        return 0;
 }
