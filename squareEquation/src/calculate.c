@@ -1,8 +1,10 @@
 //! \file "calculate.c"
 
+const double epsilon = 1E-6;
+
 //---------------------------------------------------------------------------------------------------------
 //! calculateDiscriminant method calculate the value of discriminant.
-//! 
+//!
 //! @param [in] a - a-coefficient
 //! @param [in] b - b-coefficient
 //! @param [in] c - c-coefficient
@@ -18,7 +20,7 @@ double calculateDiscriminant(double a, double b, double c)
 
 //---------------------------------------------------------------------------------------------------------
 //! calculateRoots method find roots of equation.
-//! 
+//!
 //! @param [in] discriminantValue - discriminant of equation
 //! @param [in] a - a-coefficient
 //! @param [in] b - b-coefficient
@@ -32,7 +34,7 @@ double calculateDiscriminant(double a, double b, double c)
 
 double calculateRoots(double discriminantValue, double a, double b, double c, double *x1, double *x2)
 {
-    if (discriminantValue == 0)
+    if (isZero(discriminantValue))
     {
         *x1 = (-1) * b / (2 * a);
         return 1;
@@ -41,4 +43,9 @@ double calculateRoots(double discriminantValue, double a, double b, double c, do
     *x1 = ((-1) * b + sqrt(discriminantValue)) / (2 * a);
     *x2 = ((-1) * b - sqrt(discriminantValue)) / (2 * a);
     return 2;
+}
+
+int isZero(double value)
+{
+    return fabs(value) < epsilon;
 }

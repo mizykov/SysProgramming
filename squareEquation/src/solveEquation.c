@@ -16,9 +16,9 @@
 
 int solveLinearEquation(double b, double c, double *x1)
 {
-    if (b == 0)
+    if (isZero(b))
     {
-        return c == 0 ? -1 : 0;
+        return isZero(c) ? -1 : 0;
     }
 
     *x1 = (-1) * c / b;
@@ -42,12 +42,17 @@ int solveQuadratiqueEquation(double a, double b, double c, double *x1, double *x
 {
     double discriminantValue;
 
-    if (a == 0)
+    if (isZero(a))
     {
         return solveLinearEquation(b, c, x1);
     }
 
     discriminantValue = calculateDiscriminant(a, b, c);
+
+    if (isZero(discriminantValue))
+    {
+        discriminantValue = 0.0;
+    }
 
     if (discriminantValue >= 0)
     {
