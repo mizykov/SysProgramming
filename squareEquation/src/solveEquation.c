@@ -1,6 +1,6 @@
 //! \file "solveEquation.c"
 
-//---------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 //! solveLinearEquation method find one root.
 //! 
 //! @param [in] b - b-coefficient
@@ -9,10 +9,10 @@
 //!
 //! @return number of roots
 //!
-//---------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 
 #include "calculate.c"
-//---------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 
 int solveLinearEquation(double b, double c, double *x1)
 {
@@ -25,7 +25,7 @@ int solveLinearEquation(double b, double c, double *x1)
     return 1;
 }
 
-//---------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 //! solveQuadratiqueEquation method find equation roots.
 //! 
 //! @param [in] a - a-coefficient
@@ -36,9 +36,10 @@ int solveLinearEquation(double b, double c, double *x1)
 //!
 //! @return number of roots
 //!
-//---------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 
-int solveQuadratiqueEquation(double a, double b, double c, double *x1, double *x2)
+int solveQuadratiqueEquation(double a, double b, double c, 
+                             double *x1, double *x2)
 {
     double discriminantValue;
 

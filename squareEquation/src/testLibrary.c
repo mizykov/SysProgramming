@@ -1,9 +1,12 @@
 //! \file "testLibrary.c"
 
-//---------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 //! okTwoRoots method compare expected and received answers.
 //! 
-//! @param [in] expected_option - number of solutions (2: two roots, 1: one root, 0: no roots, -1: infinity)
+//! @param [in] expected_option - number of solutions (2: two roots, 
+//!                                                    1: one root,
+//!                                                    0: no roots,
+//!                                                    -1: infinity)
 //! @param [in] expected_x1 - expected value of first root
 //! @param [in] expected_x2 - expected value of second root
 //! @param [in] a - a-coefficient
@@ -12,11 +15,13 @@
 //!
 //! @return print result of test
 //!
-//! @note such methods as okOneRoot and okZeroOrInfinityRoots use it at their core
+//! @note such methods as okOneRoot and okZeroOrInfinityRoots
+//!       use it at their core
 //!
-//---------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 
-void okTwoRoots(int expected_option, double expected_x1, double expected_x2, double a, double b, double c)
+void okTwoRoots(int expected_option, double expected_x1, double expected_x2, 
+                double a, double b, double c)
 {
     double x1 = 0, x2 = 0;
     int option;
@@ -39,7 +44,8 @@ void okTwoRoots(int expected_option, double expected_x1, double expected_x2, dou
     }
 }
 
-void okOneRoot(int expected_option, double expected_x, double a, double b, double c)
+void okOneRoot(int expected_option, double expected_x, 
+               double a, double b, double c)
 {
     okTwoRoots(expected_option, expected_x, 0, a, b, c);
 }

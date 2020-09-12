@@ -2,7 +2,7 @@
 
 const double epsilon = 1E-6;
 
-//---------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 //! calculateDiscriminant method calculate the value of discriminant.
 //!
 //! @param [in] a - a-coefficient
@@ -11,14 +11,14 @@ const double epsilon = 1E-6;
 //!
 //! @return value of discriminant
 //!
-//---------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 
 double calculateDiscriminant(double a, double b, double c)
 {
     return b * b - 4 * a * c;
 }
 
-//---------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 //! calculateRoots method find roots of equation.
 //!
 //! @param [in] discriminantValue - discriminant of equation
@@ -30,9 +30,10 @@ double calculateDiscriminant(double a, double b, double c)
 //!
 //! @return number of roots
 //!
-//---------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 
-double calculateRoots(double discriminantValue, double a, double b, double c, double *x1, double *x2)
+double calculateRoots(double discriminantValue, double a, double b, double c, 
+                      double *x1, double *x2)
 {
     if (isZero(discriminantValue))
     {
