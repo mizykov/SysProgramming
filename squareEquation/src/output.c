@@ -24,7 +24,7 @@ void printAnswer(int option, double x1, double x2)
                 printf("x = %.4lg\n", x1);
                 break;
         case 2:
-                printf("x1 = %.4lg, x2 = %.4lg\n", x1, x2);
+                printf("x1 = %.6f, x2 = %.6f\n", x1, x2);
                 break;
         }
 }

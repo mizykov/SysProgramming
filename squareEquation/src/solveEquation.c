@@ -19,7 +19,9 @@ int solveLinearEquation(double b, double c, double *x1)
         if (isZero(b))
                 return isZero(c) ? -1 : 0;
 
-        *x1 = (-1) * c / b;
+        if (!isZero(c))
+                *x1 = (-1) * c / b;
+
         return 1;
 }
 
@@ -35,6 +37,8 @@ int solveLinearEquation(double b, double c, double *x1)
 //! @return number of roots
 //!
 //-----------------------------------------------------------------------------
+
+// TODO: struct for a b c x1 x2, classes wtith .h files
 
 int solveQuadratiqueEquation(double a, double b, double c, 
                              double *x1, double *x2)

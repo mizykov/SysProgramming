@@ -1,6 +1,6 @@
 //! \file "calculate.c"
 
-const double epsilon = 1E-6;
+const double EPSILON = 1E-6;
 
 //-----------------------------------------------------------------------------
 //! calculateDiscriminant method calculate the value of discriminant.
@@ -36,7 +36,10 @@ double calculateRoots(double discriminantValue, double a, double b, double c,
                       double *x1, double *x2)
 {
         if (isZero(discriminantValue)) {
-                *x1 = (-1) * b / (2 * a);
+                
+                if (!isZero(b))
+                        *x1 = (-1) * b / (2 * a);
+
                 return 1;
         }
 
@@ -47,5 +50,5 @@ double calculateRoots(double discriminantValue, double a, double b, double c,
 
 int isZero(double value)
 {
-        return fabs(value) < epsilon;
+        return fabs(value) < EPSILON;
 }
