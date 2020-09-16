@@ -9,6 +9,10 @@ int main()
 
         okOneRoot(1, -3, 1, 6, 9);
         okOneRoot(1, 2, 0, 2, -4);
+        okOneRoot(1, 0, 0, 60, 0);
+        okOneRoot(1, 0, 0, -60, 0);
+        okOneRoot(1, 0, 70, 0, 0);
+        okOneRoot(1, 0, -10, 0, 0);
 
         okZeroOrInfinityRoots(0, 1, 2, 17);
         okZeroOrInfinityRoots(0, 0, 0, 6);
