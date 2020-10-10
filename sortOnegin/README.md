@@ -6,16 +6,15 @@ C/C++ programming course at ISP RAS.
 
 ---
 
-<!-- Necessary tools:
+Necessary tools:
 
-+ gcc
-+ doxygen -->
++ g++
 
 ---
 
 # How to build:
 
-SOON APPEAR
+Command in terminal: g++ main.cpp -o main
 
 <!-- The build is supported by Makefile:
 
@@ -33,7 +32,7 @@ SOON APPEAR
 
 # How to launch:
 
-SOON APPEAR
+./main input.txt normal_out.txt sorted_out.txt reversed_sorted_out.txt
 
 <!-- 
 > Launch program:
