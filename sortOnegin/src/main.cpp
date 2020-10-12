@@ -47,44 +47,47 @@ int main(int argc, char **argv)
         }
     }
 
-    for (int i = 0; i < strings_number; ++i)
-    {
-        printf("off: %d \n", lines[i].offset);
-    }
-
-    for (int i = 0; i < strings_number; ++i)
-    {
-        printf("size: %d \n", lines[i].size);
-    }
-
     // Original
-    for (int i = 0; i < strings_number; ++i)
+    for (int i = 0; i < strings_number - 1; ++i)
     {
         char *b = new char[lines[i].size];
         readStr(fd, lines[i].offset, lines[i].size, b);
-        printf("%s\n", b);
+        for (size_t j = 0; j < lines[i].size; j++, b++)
+            std::cout << *b;
+        std::cout << "\n";
+        b = (b - lines[i].size);
         delete b;
     }
 
-    // Direct sort
-    Line *an = bubbleSort(strings_number, lines, direct_compare);
+    std::cout << "\nSORT:" << "\n\n";
+    
+    // // Direct sort
+    Line *an = bubbleSort(strings_number - 1, lines, direct_compare);
 
-    for (int i = 0; i < strings_number; ++i)
+    for (int i = 0; i < strings_number - 1; ++i)
     {
         char *b = new char[an[i].size];
         readStr(fd, an[i].offset, an[i].size, b);
-        printf("%s\n", b);
+        for (size_t j = 0; j < lines[i].size; j++, b++)
+            std::cout << *b;
+        std::cout << "\n";
+        b = (b - lines[i].size);
         delete b;
     }
 
-    // Reverse sort
-    an = bubbleSort(strings_number, lines, direct_compare);
+    std::cout << "\ninverseSORT:" << "\n\n";
 
-    for (int i = 0; i < strings_number; ++i)
+    // // Reverse sort
+    an = bubbleSort(strings_number - 1, lines , reverse_compare);
+
+    for (int i = 0; i < strings_number - 1; ++i)
     {
         char *b = new char[an[i].size];
         readStr(fd, an[i].offset, an[i].size, b);
-        printf("%s\n", b);
+        for (size_t j = 0; j < lines[i].size; j++, b++)
+            std::cout << *b;
+        std::cout << "\n";
+        b = (b - lines[i].size);
         delete b;
     }
 
