@@ -119,13 +119,13 @@ int reverse_compare(const Line a, const Line b)
                 len2 = reverseStep(buf_b, len2, b.size);
 
                 if (len1 >= a.size || len2 >= b.size)
-                    break;
+                        break;
 
                 if (*(buf_a + a.size - 1) != *(buf_b + b.size - 1))
                 {
-                    res = *(buf_a + a.size - 1) < *(buf_b + b.size - 1);
-                    check = false;
-                    break;
+                        res = *(buf_a + a.size - 1) < *(buf_b + b.size - 1);
+                        check = false;
+                        break;
                 }
                 --buf_a;
                 --buf_b;
@@ -136,9 +136,9 @@ int reverse_compare(const Line a, const Line b)
         if (check)
         {
                 if (len1 >= a.size)
-                    res = 0;
+                        res = 0;
                 else
-                    res = 1;
+                        res = 1;
         }
 
         return res;
