@@ -32,7 +32,13 @@ Command in terminal: g++ main.cpp -o main
 
 # How to launch:
 
-./main input.txt normal_out.txt sorted_out.txt reversed_sorted_out.txt
+./main input.txt original.txt sort.txt inverseSort.txt
+
+where:
++ input.txt - your text.
++ original.txt - text in canonical order
++ sort.txt - direct sorted text
++ inverseSort.txt - text in reverse order
 
 <!-- 
 > Launch program:
