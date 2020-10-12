@@ -6,9 +6,11 @@
 #include <fstream>
 #include "stdlib.h"
 
+
 #include "utils.cpp"
 #include "comparators.cpp"
 #include "sort.cpp"
+
 
 int main(int argc, char **argv)
 {
@@ -86,10 +88,6 @@ int main(int argc, char **argv)
                 b = (b - lines[i].size);
                 delete b;
         }
-
-        /** fclose(normal_out);
-        fclose(sorted_out);
-        fclose(reversed_sorted_out); **/
 
         original_out.close();
         sorted_out.close();

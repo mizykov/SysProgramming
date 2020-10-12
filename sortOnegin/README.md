@@ -9,12 +9,13 @@ C/C++ programming course at ISP RAS.
 Necessary tools:
 
 + g++
++ cmake
 
 ---
 
 # How to build:
 
-Command in terminal: g++ main.cpp -o main
+Command in terminal: `cmake ./`, next build exe `make`
 
 <!-- The build is supported by Makefile:
 
