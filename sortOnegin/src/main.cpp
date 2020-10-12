@@ -3,6 +3,7 @@
 #include <memory.h>
 #include <algorithm>
 #include <iostream>
+#include <fstream>
 #include "stdlib.h"
 
 #include "utils.cpp"
@@ -11,11 +12,12 @@
 
 int main(int argc, char **argv)
 {
-    /** FILE *normal_out = fopen(argv[2], "w"),
-         *sorted_out = fopen(argv[3], "w"),
-         *reversed_sorted_out = fopen(argv[4], "w"); **/
+    std::ofstream original_out, sorted_out, reverse_sorted_out;
+    original_out.open(argv[2]);
+    sorted_out.open(argv[3]);
+    reverse_sorted_out.open(argv[4]);
 
-    char *path = "input.txt";
+    char *path = argv[1];
     int fd = open(path, O_RDWR);
 
     char buffer[5];
@@ -33,9 +35,7 @@ int main(int argc, char **argv)
         ++current_size;
 
         if (s == 0)
-        {
             break;
-        }
         else if (buffer[0] == '\n')
         {
             lines[strings_number - 1].size = current_size - 2;
@@ -53,14 +53,12 @@ int main(int argc, char **argv)
         char *b = new char[lines[i].size];
         readStr(fd, lines[i].offset, lines[i].size, b);
         for (size_t j = 0; j < lines[i].size; j++, b++)
-            std::cout << *b;
-        std::cout << "\n";
+            original_out << *b;
+        original_out << "\n";
         b = (b - lines[i].size);
         delete b;
     }
 
-    std::cout << "\nSORT:" << "\n\n";
-    
     // // Direct sort
     Line *an = bubbleSort(strings_number - 1, lines, direct_compare);
 
@@ -69,24 +67,22 @@ int main(int argc, char **argv)
         char *b = new char[an[i].size];
         readStr(fd, an[i].offset, an[i].size, b);
         for (size_t j = 0; j < lines[i].size; j++, b++)
-            std::cout << *b;
-        std::cout << "\n";
+            sorted_out << *b;
+        sorted_out << "\n";
         b = (b - lines[i].size);
         delete b;
     }
 
-    std::cout << "\ninverseSORT:" << "\n\n";
-
     // // Reverse sort
-    an = bubbleSort(strings_number - 1, lines , reverse_compare);
+    an = bubbleSort(strings_number - 1, lines, reverse_compare);
 
-    for (int i = 0; i < strings_number - 1; ++i)
+    for (int i = 1; i < strings_number - 1; ++i)
     {
         char *b = new char[an[i].size];
         readStr(fd, an[i].offset, an[i].size, b);
         for (size_t j = 0; j < lines[i].size; j++, b++)
-            std::cout << *b;
-        std::cout << "\n";
+            reverse_sorted_out << *b;
+        reverse_sorted_out << "\n";
         b = (b - lines[i].size);
         delete b;
     }
@@ -94,6 +90,10 @@ int main(int argc, char **argv)
     /** fclose(normal_out);
     fclose(sorted_out);
     fclose(reversed_sorted_out); **/
+
+    original_out.close();
+    sorted_out.close();
+    reverse_sorted_out.close();
 
     close(fd);
 
