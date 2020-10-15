@@ -6,10 +6,14 @@ int main()
 {
     Stack *stack = initStack();
 
-    printf("stack 1:\n");
-    printf("canary 1 : %p\n", stack->before);
-    printf("stack :    %p\n", stack);
-    printf("canary 2 : %p\n", stack->after);
+    printf("Stack pointer:\n");
+    printf("canaryHead 1 : %p\n", stack->before);
+    printf("stack :        %p\n", stack);
+    printf("canaryHead 2 : %p\n\n", stack->after);
+
+    push(stack, 5);
+    push(stack, 25);
+    push(stack, 13);
 
     return 0;
 }
