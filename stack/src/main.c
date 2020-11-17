@@ -4,7 +4,8 @@
 
 int main()
 {
-    Stack *stack = initStack();
+    printf("Stack:\n");
+    Stack *stack = initStack(1);
 
     printf("Stack pointer:\n");
     printf("canaryHead 1 : %p\n", stack->before);
@@ -14,6 +15,14 @@ int main()
     push(stack, 5);
     push(stack, 25);
     push(stack, 13);
+
+    printStack(stack);
+
+    pop(stack);
+    pop(stack);
+    pop(stack);
+
+    printStack(stack);
 
     return 0;
 }

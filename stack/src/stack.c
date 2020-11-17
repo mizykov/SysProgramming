@@ -1,6 +1,6 @@
 #include "stack.h"
 
-Stack *initStack()
+Stack *initStack(int log_value)
 {
     HeadCanary *first = malloc(sizeof(HeadCanary));
     Stack *nill = malloc(sizeof(Stack));
@@ -15,15 +15,17 @@ Stack *initStack()
     last->stack = nill;
     last->value = DED;
 
-    insertCanariesToBody(nill);
+    insertCanariesToBody(nill, log_value);
 
-    LOG_FUN
-    LOG_DUMP(nill->bo, nill->top, nill->dy);
+    if (log_value == 1) {
+        LOG_FUN
+        LOG_DUMP(nill->bo, nill->top, nill->dy);
+    }
 
     return nill;
 }
 
-void insertCanariesToBody(Stack *stack)
+void insertCanariesToBody(Stack *stack, int log_value)
 {
     BodyCanary *first = malloc(sizeof(BodyCanary));
     StackNode *node = malloc(sizeof(StackNode));
@@ -37,25 +39,38 @@ void insertCanariesToBody(Stack *stack)
     second->value = DED;
     second->node = stack->top;
 
-    stack->top->next = first;
-    stack->top->prev = second;
     stack->bo = first;
     stack->dy = second;
+
+    stack->logging = log_value;
 }
 
 int pop(Stack *stack)
 {
     if (isEmpty(stack))
     {
+        if (stack->logging == 1) {
+            printf("Stack is empty!\n");
+        }
         return 0;
     }
-    else
-    {
-        StackNode *cur = stack->top;
-        stack->top = cur->next;
-        cur->next = NULL;
-        free(cur);
+    BodyCanary *canary = stack->dy;
+    free(canary);
+
+    StackNode *cur = stack->top->next;
+    free(stack->top);
+    stack->top = cur;
+
+    BodyCanary *movingCanary = malloc(sizeof(BodyCanary));
+    movingCanary->value = DED;
+    movingCanary->node = cur;
+    stack->dy = movingCanary;
+
+    if (stack->logging == 1) {
+        LOG_FUN
+        LOG_DUMP(stack->bo, stack->top, stack->dy);
     }
+    
     return 1;
 }
 
@@ -81,8 +96,10 @@ int push(Stack *stack, int value)
     stack->top = newel;
     stack->dy = movingCanary;
 
-    LOG_FUN
-    LOG_DUMP(stack->bo, stack->top, stack->dy);
+    if (stack->logging == 1) {
+        LOG_FUN
+        LOG_DUMP(stack->bo, stack->top, stack->dy);
+    }
 
     return 1;
 }
@@ -96,13 +113,20 @@ int isEmpty(Stack *stack)
 
 void printStack(Stack *stack)
 {
-    StackNode *cur = stack->top;
-    while (cur->isNILL != 1)
+    if (isEmpty(stack))
     {
-        printf("%d ", cur->value);
-        cur = cur->next;
+        printf("Stack is empty!\n");
     }
-    printf("\n");
+    else 
+    {
+        StackNode *cur = stack->top;
+        while (cur->isNILL != 1)
+        {
+            printf("%d ", cur->value);
+            cur = cur->next;
+        }
+        printf("\n");
+    }
 }
 
 void stackStatus(BodyCanary *can1, StackNode *top, BodyCanary *can2)
@@ -110,5 +134,6 @@ void stackStatus(BodyCanary *can1, StackNode *top, BodyCanary *can2)
     printf("DATA STACK STATUS:\n");
     printf("canaryBody 1 : %p\n", can1);
     printf("top :          %p\n", top);
-    printf("canaryBody 2 : %p\n\n", can2);
+    printf("canaryBody 2 : %p\n", can2);
+    printf("*******************************\n\n");
 }
