@@ -12,6 +12,22 @@ gcc
 
 ---
 
+Table of commands
+
+|   command   |                   description                      |
+| ----------- |:--------------------------------------------------:|
+|     ADD     |   ADD A B - add B to A and write in register A     |
+|     SUB     |   SUB A B - sub B from A and write in register A   |
+|     DIV     |   DIV A B - div A on B and write in register A     |
+|     MUL     |   MUL A B - mul A on B and write to register A     |
+|     MOV     |   MOV A B - move value of register B to register A |
+|     POP     |   POP X - take register X from stack for executing |
+|     PUSH    |   PUSH X - set register X in stack for executing   |
+|     CALL    |   CALL X - call other function with address X      |
+|     OUT     |   OUT X - print value in register X                |
+|     END     |   end of working                                   |
+|     SET     |   SET A B - set value B in register A              |
+
 # How to build and run:
 
 When you are in the src folder:
