@@ -8,39 +8,22 @@ C/C++ programming course at ISP RAS.
 
 Necessary tools:
 
-Soon appear
-<!-- + gcc
-+ cmake -->
+gcc
 
 ---
 
-# How to build:
+# How to build and run:
 
-Soon appear
-<!-- Command in terminal: `cmake ./`, next build exe `make` -->
+When you are in the src folder:
 
-<!-- The build is supported by Makefile:
+Command in terminal: `gcc main.cpp stack.cpp cpu.cpp -o main && ./main [.bin file]`
 
-> Build an exe file, tests, and documentation:
->> make full
->
-> Build an exe file
->> make exeFile
->
-> Build the documentation (which is located in the docs - index.html):
->> make docs
->
-> Build tests
->> make tests -->
+For example, you want to launch test1.bin:
 
-# How to launch:
+`gcc main.cpp stack.cpp cpu.cpp -o main && ./main ./test1.bin`
 
-Soon appear
-<!-- ./main  -->
+# Scripts:
 
-<!-- 
-> Launch program:
->> make runExeFile
->
-> Launch tests
->> make runTests -->
+> main.cpp - create cpu and launch code
+> stach.h, stack.cpp - implementation of stack
+> cpu.h, cpu.cpp - implementation of cpu
