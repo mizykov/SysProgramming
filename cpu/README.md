@@ -22,8 +22,15 @@ For example, you want to launch test1.bin:
 
 `gcc main.cpp stack.cpp cpu.cpp -o main && ./main ./test1.bin`
 
+# Example test1.bin:
+
+The program describes the following sequence of commands: `set 1 3 out 1 end`.
+
+The value 3 is written to register 1, then the value (VALUE: 3) is taken from register 1 and output, and the program exits.
+
 # Scripts:
 
-> main.cpp - create cpu and launch code
-> stach.h, stack.cpp - implementation of stack
-> cpu.h, cpu.cpp - implementation of cpu
++ main - create cpu, write and execute code
++ stack - implementation of stack
++ cpu - implementation of cpu
++ commands.txt - list of cpu commands with their encoding
