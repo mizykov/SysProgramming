@@ -38,11 +38,17 @@ For example, you want to launch test1.bin:
 
 `gcc main.cpp stack.cpp cpu.cpp -o main && ./main ./test1.bin`
 
-# Example test1.bin:
+# Tests:
 
++ Program test1.bin. 
 The program describes the following sequence of commands: `set 1 3 out 1 end`.
 
 The value 3 is written to register 1, then the value (VALUE: 3) is taken from register 1 and output, and the program exits.
+
++ Program test2.bin
+The program describes the following sequence of commands: `set 1 3 set 2 3 push 1 push 2 add 1 2 out 1 end`.
+
+The value 3 is written to register 1, also with register 2, then they will push to stach for operations. This operation is add, sum of them wil added to register 1 and print with command out.
 
 # Scripts:
 
