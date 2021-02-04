@@ -4,7 +4,8 @@
 extern uint32_t limitSizeRAM;
 
 const uint8_t numberOfRegs = 32;
-const uint16_t sizeOfInput = 20;
+// Max limit for input program
+const uint16_t sizeOfInput = 1000;
 
 // ERRORS for logging in interface
 enum errors
